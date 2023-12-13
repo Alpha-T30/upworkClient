@@ -3,7 +3,8 @@ const path = require("path");
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const app = require("./app/api/server");
+
+const app = require("./app/dpi/server");
 const { db } = require("./app/db/db");
 const { User, Session, Cart } = require("./app/db/Models/index");
 
@@ -54,7 +55,7 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static(PUBLIC_PATH));
 app.use(express.static(DIST_PATH));
-app.use("/api", require("./app/api/routers/index"));
+app.use("/api", require("./app/dpi/routers/index"));
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(PUBLIC_PATH, "./index.html"));
