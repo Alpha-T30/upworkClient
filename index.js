@@ -9,8 +9,8 @@ const { db } = require("./app/db/db");
 const { User, Session, Cart } = require("./app/db/Models/index");
 
 const PORT = process.env.PORT || 8000;
-const PUBLIC_PATH = path.join(__dirname, "../../public");
-const DIST_PATH = path.join(__dirname, "../../dist");
+const PUBLIC_PATH = path.join(__dirname, "public");
+const DIST_PATH = path.join(__dirname, "dist");
 
 app.use(cookieParser());
 
