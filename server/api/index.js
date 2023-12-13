@@ -1,3 +1,4 @@
+require("dotenv").config();
 const path = require("path");
 const express = require("express");
 const cookieParser = require("cookie-parser");
@@ -61,14 +62,14 @@ app.get("*", (req, res) => {
 
 const startServer = () =>
   new Promise((res) => {
-    app.listen(PORT, () => {
+    app.listen(PORT, "0.0.0.0", () => {
       console.log(`Server is now listening on PORT:${PORT}`);
       res();
     });
   });
 
 db.sync().then(() => {
-  app.listen(PORT, () => {
+  app.listen(PORT, "0.0.0.0", () => {
     console.log(`Server is now listening on PORT:${PORT}`);
   });
 });
