@@ -1,7 +1,10 @@
 {
-  "name": "prepbox",
-  "version": "0.1.0",
-  "private": true,
+  "name": "nodejs-app",
+  "version": "1.0.0",
+  "description": "A minimal Node.js web application.",
+  "main": "index.js",
+  "author": "alphasec",
+  "license": "MIT",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -28,7 +31,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "node ./app/api/index.js"
+    "start": "node index.js"
   },
   "eslintConfig": {
     "extends": [

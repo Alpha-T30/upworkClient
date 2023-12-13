@@ -3,9 +3,9 @@ const path = require("path");
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const app = require("./server");
-const { db } = require("../db/db");
-const { User, Session, Cart } = require("../db/Models/index");
+const app = require("./app/api/server");
+const { db } = require("./app/db/db");
+const { User, Session, Cart } = require("./app/db/Models/index");
 
 const PORT = process.env.PORT || 8000;
 const PUBLIC_PATH = path.join(__dirname, "../../public");
@@ -54,7 +54,7 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static(PUBLIC_PATH));
 app.use(express.static(DIST_PATH));
-app.use("/api", require("./routers/index"));
+app.use("/api", require("./app/api/routers/index"));
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(PUBLIC_PATH, "./index.html"));
